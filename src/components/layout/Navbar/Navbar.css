@@ -1,0 +1,1021 @@
+/* ==========================================================================
+   SENTUARA — HAUTE PARFUMERIE LUXURY NAVBAR STYLES
+   ========================================================================== */
+
+/* --- Sticky Shell & Background Transitions --- */
+.sentuara-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: var(--z-sticky);
+  transition: 
+    background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-backdrop-filter 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    padding 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* State 1: Transparent initially over hero */
+.sentuara-header--transparent {
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.6rem 0;
+}
+
+/* State 2: Solid / Scrolled sticky state */
+.sentuara-header--scrolled {
+  background-color: rgba(9, 9, 11, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 0.95rem 0;
+  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.75);
+}
+
+/* Container */
+.sentuara-header__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   LEFT: LUXURY BRAND LOGO & MONOGRAM
+   ========================================================================== */
+
+.sentuara-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  user-select: none;
+  transition: transform var(--duration-fast) var(--ease-luxury);
+  flex-shrink: 0;
+}
+
+.sentuara-header__brand:hover {
+  transform: translateY(-1px);
+}
+
+.sentuara-header__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s var(--ease-luxury);
+}
+
+.sentuara-header__brand:hover .sentuara-header__logo-wrap {
+  transform: rotate(5deg) scale(1.04);
+}
+
+.sentuara-logo-emblem {
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+  transition: filter var(--duration-normal) ease;
+}
+
+.sentuara-header__brand:hover .sentuara-logo-emblem {
+  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.6));
+}
+
+.sentuara-header__brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sentuara-header__brand-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  color: #ffffff;
+  line-height: 1;
+  transition: color var(--duration-fast) ease;
+}
+
+.sentuara-header__brand:hover .sentuara-header__brand-name {
+  background: var(--gold-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sentuara-header__brand-tag {
+  font-family: var(--font-sans);
+  font-size: 0.52rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-luxury);
+  color: var(--gold-muted);
+  margin-top: 0.25rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   CENTER: DESKTOP NAVIGATION
+   ========================================================================== */
+
+.sentuara-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sentuara-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 2.4vw, 2.75rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sentuara-header__nav-item {
+  position: relative;
+}
+
+.sentuara-header__nav-link {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0.25rem;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+  transition: color var(--duration-fast) ease;
+}
+
+.sentuara-header__link-label {
+  position: relative;
+  z-index: 1;
+  transition: transform var(--duration-fast) var(--ease-luxury);
+}
+
+/* Underline Animation */
+.sentuara-header__link-underline {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background: var(--gold-gradient-primary);
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+/* Hover & Active States */
+.sentuara-header__nav-link:hover {
+  color: #ffffff;
+}
+
+.sentuara-header__nav-link:hover .sentuara-header__link-label {
+  color: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+.sentuara-header__nav-link:hover .sentuara-header__link-underline,
+.sentuara-header__nav-link--active .sentuara-header__link-underline {
+  width: 100%;
+  opacity: 1;
+}
+
+.sentuara-header__nav-link--active .sentuara-header__link-label {
+  color: var(--gold-primary);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   RIGHT: ACTION ICONS (SEARCH, ACCOUNT, CART)
+   ========================================================================== */
+
+.sentuara-header__actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 1.4vw, 1.25rem);
+  flex-shrink: 0;
+}
+
+.sentuara-header__icon-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 0.65rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-luxury);
+}
+
+.sentuara-header__icon-btn:hover {
+  color: var(--gold-primary);
+  transform: translateY(-2px);
+}
+
+/* Ambient glow on hover */
+.sentuara-header__icon-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform var(--duration-normal) var(--ease-luxury);
+}
+
+.sentuara-header__icon-btn:hover .sentuara-header__icon-glow {
+  transform: translate(-50%, -50%) scale(1.4);
+}
+
+/* Shopping Cart Badge */
+.sentuara-header__cart-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 10px;
+  background: var(--gold-gradient-primary);
+  color: #070707;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+  line-height: 1;
+}
+
+/* ==========================================================================
+   MOBILE HAMBURGER BUTTON
+   ========================================================================== */
+
+.sentuara-header__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color var(--duration-fast) ease, background-color var(--duration-fast) ease;
+}
+
+.sentuara-header__burger:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  background: rgba(212, 175, 55, 0.06);
+}
+
+.sentuara-header__burger-line {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background-color: #ffffff;
+  border-radius: 1px;
+  transition: transform 0.35s var(--ease-luxury), opacity 0.25s ease, background-color var(--duration-fast) ease;
+}
+
+.sentuara-header__burger:hover .sentuara-header__burger-line {
+  background-color: var(--gold-light);
+}
+
+.sentuara-header__burger--active .sentuara-header__burger-line--top {
+  transform: translateY(6.5px) rotate(45deg);
+  background-color: var(--gold-primary);
+}
+
+.sentuara-header__burger--active .sentuara-header__burger-line--mid {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.sentuara-header__burger--active .sentuara-header__burger-line--bot {
+  transform: translateY(-6.5px) rotate(-45deg);
+  background-color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   FULL-SCREEN LUXURY MOBILE MENU
+   ========================================================================== */
+
+.sentuara-mobile-menu {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: calc(var(--z-sticky) + 100);
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0.4s ease;
+}
+
+.sentuara-mobile-menu--open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.sentuara-mobile-menu__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.sentuara-mobile-menu--open .sentuara-mobile-menu__backdrop {
+  opacity: 1;
+}
+
+.sentuara-mobile-menu__inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  background: linear-gradient(180deg, #0e0e12 0%, #070709 100%);
+  border-left: 1px solid rgba(212, 175, 55, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem clamp(1.5rem, 5vw, 2.75rem);
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.9);
+  overflow-y: auto;
+}
+
+.sentuara-mobile-menu--open .sentuara-mobile-menu__inner {
+  transform: translateX(0);
+}
+
+.sentuara-mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+}
+
+.sentuara-mobile-menu__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sentuara-mobile-menu__brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  letter-spacing: var(--tracking-wider);
+  color: #ffffff;
+}
+
+.sentuara-mobile-menu__close-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.sentuara-mobile-menu__close-btn:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  transform: rotate(90deg);
+}
+
+.sentuara-mobile-menu__divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.3) 0%, transparent 100%);
+  margin: 1rem 0;
+}
+
+/* Navigation List in Mobile Drawer */
+.sentuara-mobile-menu__nav {
+  margin: 1.5rem 0;
+  flex: 1;
+}
+
+.sentuara-mobile-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sentuara-mobile-menu__item {
+  transform: translateX(20px);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  transition-delay: calc(var(--item-index) * 0.05s + 0.1s);
+}
+
+.sentuara-mobile-menu--open .sentuara-mobile-menu__item {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sentuara-mobile-menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all var(--duration-fast) ease;
+}
+
+.sentuara-mobile-menu__item-num {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--gold-muted);
+  letter-spacing: var(--tracking-wider);
+  margin-right: 1.25rem;
+  font-weight: 500;
+}
+
+.sentuara-mobile-menu__item-text {
+  flex: 1;
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 4vw, 1.85rem);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+
+.sentuara-mobile-menu__item-arrow {
+  color: var(--text-muted);
+  transition: transform var(--duration-fast) ease, color var(--duration-fast) ease;
+}
+
+.sentuara-mobile-menu__link:hover {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.sentuara-mobile-menu__link:hover .sentuara-mobile-menu__item-text {
+  color: var(--gold-light);
+  transform: translateX(6px);
+}
+
+.sentuara-mobile-menu__link:hover .sentuara-mobile-menu__item-arrow {
+  color: var(--gold-primary);
+  transform: translateX(4px);
+}
+
+.sentuara-mobile-menu__link--active .sentuara-mobile-menu__item-text {
+  background: var(--gold-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mobile Footer Utilities */
+.sentuara-mobile-menu__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 1rem;
+}
+
+.sentuara-mobile-menu__account-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 0.85rem 1.25rem;
+  border-radius: 2px;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.sentuara-mobile-menu__account-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold-primary);
+}
+
+.sentuara-mobile-menu__meta {
+  text-align: center;
+}
+
+.sentuara-mobile-menu__tag {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: var(--tracking-luxury);
+  color: var(--gold-muted);
+}
+
+.sentuara-mobile-menu__sub {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* ==========================================================================
+   INTERACTIVE SEARCH MODAL OVERLAY
+   ========================================================================== */
+
+.sentuara-search-modal {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-sticky) + 200);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.sentuara-search-modal--open {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.sentuara-search-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 6, 8, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.sentuara-search-modal__box {
+  position: relative;
+  width: 90%;
+  max-width: 680px;
+  background: #111115;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), var(--gold-glow-sm);
+  padding: 2.25rem;
+  border-radius: 4px;
+  transform: translateY(-20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sentuara-search-modal--open .sentuara-search-modal__box {
+  transform: translateY(0);
+}
+
+.sentuara-search-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.sentuara-search-modal__close {
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--duration-fast) ease;
+}
+
+.sentuara-search-modal__close:hover {
+  color: var(--gold-light);
+}
+
+.sentuara-search-modal__input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+  padding-bottom: 0.75rem;
+}
+
+.sentuara-search-modal__input {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.sentuara-search-modal__input::placeholder {
+  color: var(--text-muted);
+}
+
+.sentuara-search-modal__suggestions {
+  margin-top: 1.75rem;
+}
+
+.sentuara-search-modal__suggestions-label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.sentuara-search-modal__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.sentuara-search-modal__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.sentuara-search-modal__tag:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.08);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   MINI SHOPPING BAG DRAWER
+   ========================================================================== */
+
+.sentuara-cart-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-sticky) + 200);
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0.4s ease;
+}
+
+.sentuara-cart-drawer--open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.sentuara-cart-drawer__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.sentuara-cart-drawer--open .sentuara-cart-drawer__backdrop {
+  opacity: 1;
+}
+
+.sentuara-cart-drawer__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  background: #0d0d10;
+  border-left: 1px solid rgba(212, 175, 55, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 2.25rem 2rem;
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -15px 0 50px rgba(0, 0, 0, 0.85);
+}
+
+.sentuara-cart-drawer--open .sentuara-cart-drawer__panel {
+  transform: translateX(0);
+}
+
+.sentuara-cart-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sentuara-cart-drawer__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sentuara-cart-drawer__title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  letter-spacing: var(--tracking-wider);
+  color: #ffffff;
+  margin: 0;
+}
+
+.sentuara-cart-drawer__close {
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color var(--duration-fast) ease;
+}
+
+.sentuara-cart-drawer__close:hover {
+  color: var(--gold-light);
+}
+
+.sentuara-cart-drawer__body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sentuara-cart-drawer__empty {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sentuara-cart-drawer__empty-icon {
+  margin-bottom: 0.5rem;
+}
+
+.sentuara-cart-drawer__empty-text {
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.sentuara-cart-drawer__empty-sub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 260px;
+  line-height: 1.5;
+}
+
+.sentuara-cart-drawer__explore-btn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--gold-gradient-primary);
+  color: #080808;
+  padding: 0.75rem 1.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all var(--duration-fast) ease;
+}
+
+.sentuara-cart-drawer__explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================================================================
+   ACCOUNT PRIVÉ MODAL
+   ========================================================================== */
+
+.sentuara-account-modal {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-sticky) + 200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.sentuara-account-modal--open {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.sentuara-account-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 6, 8, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.sentuara-account-modal__box {
+  position: relative;
+  width: 90%;
+  max-width: 460px;
+  background: #111115;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 2.5rem;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+  transform: scale(0.95);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sentuara-account-modal--open .sentuara-account-modal__box {
+  transform: scale(1);
+}
+
+.sentuara-account-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.sentuara-account-modal__seal {
+  margin: 0 auto;
+  transform: translateX(12px);
+}
+
+.sentuara-account-modal__close {
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color var(--duration-fast) ease;
+}
+
+.sentuara-account-modal__close:hover {
+  color: var(--gold-light);
+}
+
+.sentuara-account-modal__title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: var(--tracking-wider);
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.sentuara-account-modal__subtitle {
+  color: var(--gold-light);
+  font-size: 1.05rem;
+  margin-bottom: 1.75rem;
+}
+
+.sentuara-account-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.sentuara-account-modal__label {
+  font-size: 0.7rem;
+  letter-spacing: var(--tracking-wider);
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.sentuara-account-modal__input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.85rem 1rem;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.sentuara-account-modal__input:focus {
+  border-color: var(--gold-primary);
+}
+
+.sentuara-account-modal__btn {
+  background: var(--gold-gradient-primary);
+  color: #070707;
+  padding: 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wider);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all var(--duration-fast) ease;
+}
+
+.sentuara-account-modal__btn:hover {
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+.sentuara-account-modal__perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (DESKTOP -> TABLET -> MOBILE)
+   ========================================================================== */
+
+/* Tablet & Mobile Breakpoint (<= 1080px) */
+@media (max-width: 1080px) {
+  .sentuara-header__nav {
+    display: none;
+  }
+
+  .sentuara-header__burger {
+    display: flex;
+  }
+
+  .sentuara-header__icon-btn--account {
+    display: none;
+  }
+
+  .sentuara-header--transparent {
+    padding: 1.25rem 0;
+  }
+
+  .sentuara-header--scrolled {
+    padding: 0.85rem 0;
+  }
+}
+
+/* Mobile Screen (<= 640px) */
+@media (max-width: 640px) {
+  .sentuara-header__container {
+    padding: 0 1.25rem;
+  }
+
+  .sentuara-header__brand-name {
+    font-size: 1.15rem;
+    letter-spacing: var(--tracking-wider);
+  }
+
+  .sentuara-header__brand-tag {
+    display: none;
+  }
+
+  .sentuara-header__actions {
+    gap: 0.4rem;
+  }
+
+  .sentuara-header__icon-btn {
+    padding: 0.5rem;
+  }
+
+  .sentuara-search-modal__box {
+    padding: 1.5rem;
+  }
+}

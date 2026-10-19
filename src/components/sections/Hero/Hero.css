@@ -1,0 +1,304 @@
+/* ==========================================================================
+   SANTUARA — HERO SECTION STYLES
+   ========================================================================== */
+
+.santuara-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: clamp(6.5rem, 12vh, 9rem);
+  padding-bottom: clamp(5.5rem, 10vh, 7rem);
+  overflow: hidden;
+  background-color: #060608;
+}
+
+.santuara-hero__container {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4.5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+/* ==========================================================================
+   LEFT SIDE: EDITORIAL CONTENT
+   ========================================================================== */
+
+.santuara-hero__content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  will-change: transform, opacity;
+}
+
+/* Eyebrow / Overline */
+.santuara-hero__eyebrow-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.santuara-hero__bullet {
+  width: 5px;
+  height: 5px;
+  background: var(--gold-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--gold-primary);
+}
+
+.santuara-hero__eyebrow {
+  font-family: var(--font-sans);
+  font-size: clamp(0.7rem, 1vw, 0.78rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+
+/* Major Brand Heading: SANTUARA */
+.santuara-hero__brand-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  margin: 0 0 1.5rem 0;
+  background: var(--gold-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  text-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+  filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.2));
+}
+
+/* Sub-headline: MORE THAN A FRAGRANCE / IT'S A PRESENCE */
+.santuara-hero__subheadline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.santuara-hero__sub-line {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.2vw, 1.85rem);
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.santuara-hero__sub-line--accent {
+  color: var(--gold-pale);
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+/* Editorial Paragraph */
+.santuara-hero__description {
+  font-family: var(--font-sans);
+  font-size: clamp(0.88rem, 1.1vw, 0.98rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* CTA: EXPLORE COLLECTION → */
+.santuara-hero__cta-wrap {
+  position: relative;
+}
+
+.santuara-hero__cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.05rem 2.5rem;
+  background: rgba(14, 14, 18, 0.45);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.santuara-hero__cta-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-gradient-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.santuara-hero__cta-text {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color 0.35s ease;
+}
+
+.santuara-hero__cta-arrow {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  color: var(--gold-light);
+  transition: color 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* CTA Hover State */
+.santuara-hero__cta-btn:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 6px 30px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+.santuara-hero__cta-btn:hover .santuara-hero__cta-fill {
+  transform: scaleX(1);
+}
+
+.santuara-hero__cta-btn:hover .santuara-hero__cta-text {
+  color: #080808;
+}
+
+.santuara-hero__cta-btn:hover .santuara-hero__cta-arrow {
+  color: #080808;
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   RIGHT SIDE: 3D LUXURY BOTTLE
+   ========================================================================== */
+
+.santuara-hero__visual-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+
+/* Laptop (1024px–1439px) */
+@media (max-width: 1439px) {
+  .santuara-hero__container {
+    gap: 3rem;
+  }
+  .santuara-hero__brand-title {
+    font-size: clamp(3rem, 6.5vw, 5.2rem);
+  }
+}
+
+/* Tablet (768px–1023px) */
+@media (max-width: 1023px) {
+  .santuara-hero__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3.5rem;
+    padding-top: 2rem;
+  }
+
+  .santuara-hero__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .santuara-hero__description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .santuara-hero__visual-wrap {
+    order: 2;
+  }
+}
+
+/* Mobile (320px–767px) */
+@media (max-width: 767px) {
+  .santuara-hero {
+    padding-top: 6.5rem;
+    padding-bottom: 5.5rem;
+    min-height: 100svh;
+  }
+
+  .santuara-hero__container {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    padding: 0 1.25rem;
+  }
+
+  .santuara-hero__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .santuara-hero__eyebrow-wrap {
+    margin-bottom: 0.75rem;
+  }
+
+  .santuara-hero__brand-title {
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
+    letter-spacing: 0.16em;
+    margin-bottom: 1rem;
+  }
+
+  .santuara-hero__sub-line {
+    font-size: 1.05rem;
+    letter-spacing: 0.12em;
+  }
+
+  .santuara-hero__sub-line--accent {
+    font-size: 1.25rem;
+  }
+
+  .santuara-hero__description {
+    font-size: 0.85rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.65;
+  }
+
+  .santuara-hero__cta-btn {
+    padding: 0.9rem 2rem;
+    font-size: 0.72rem;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}

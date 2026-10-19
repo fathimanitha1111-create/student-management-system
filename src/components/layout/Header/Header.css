@@ -1,0 +1,886 @@
+/* ==========================================================================
+   SANTUARA — HAUTE PARFUMERIE HEADER STYLES
+   ========================================================================== */
+
+.santuara-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: 
+    background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-backdrop-filter 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    padding 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* State 1: Transparent initially over hero */
+.santuara-header--transparent {
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  padding: 1.75rem 0 1.5rem;
+}
+
+/* State 2: Dark translucent + backdrop blur when scrolling */
+.santuara-header--scrolled {
+  background-color: rgba(6, 6, 8, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1.1rem 0 0.95rem;
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8);
+}
+
+/* Inner Layout */
+.santuara-header__inner {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4.5vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Thin subtle gold bottom divider line */
+.santuara-header__bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.25) 20%,
+    rgba(212, 175, 55, 0.4) 50%,
+    rgba(212, 175, 55, 0.25) 80%,
+    transparent 100%
+  );
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+}
+
+.santuara-header--scrolled .santuara-header__bottom-line {
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.4) 25%,
+    rgba(212, 175, 55, 0.6) 50%,
+    rgba(212, 175, 55, 0.4) 75%,
+    transparent 100%
+  );
+}
+
+/* ==========================================================================
+   LEFT: SANTUARA LOGO / WORDMARK
+   ========================================================================== */
+
+.santuara-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.santuara-header__brand:hover {
+  transform: translateY(-1px);
+}
+
+.santuara-flame-symbol {
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.35));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.santuara-header__brand:hover .santuara-flame-symbol {
+  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.65));
+  transform: scale(1.05);
+}
+
+.santuara-header__wordmark {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  background: var(--gold-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   CENTER: NAVIGATION
+   ========================================================================== */
+
+.santuara-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.santuara-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.75rem, 2.8vw, 3.25rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.santuara-header__nav-item {
+  position: relative;
+}
+
+.santuara-header__nav-link {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.4rem 0.15rem;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.santuara-header__nav-text {
+  position: relative;
+  z-index: 1;
+  transition: color 0.35s ease, transform 0.3s ease;
+}
+
+/* Smooth Underline Animation from Left to Right */
+.santuara-header__nav-underline {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--gold-gradient-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  transition: 
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.3s ease;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  border-radius: 1px;
+}
+
+/* Hover State */
+.santuara-header__nav-link:hover .santuara-header__nav-text {
+  color: var(--gold-light);
+}
+
+.santuara-header__nav-link:hover .santuara-header__nav-underline {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* Active State (HOME initially active) */
+.santuara-header__nav-link--active .santuara-header__nav-text {
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+.santuara-header__nav-link--active .santuara-header__nav-underline {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   RIGHT: ACTION ICONS
+   ========================================================================== */
+
+.santuara-header__actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 1.3vw, 1.25rem);
+  flex-shrink: 0;
+}
+
+.santuara-header__action-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.6rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s var(--ease-luxury);
+}
+
+.santuara-header__action-btn:hover {
+  color: var(--gold-primary);
+  transform: translateY(-2px);
+}
+
+.santuara-header__action-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
+  transform: scale(0);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.35s var(--ease-luxury);
+}
+
+.santuara-header__action-btn:hover .santuara-header__action-glow {
+  transform: scale(1.4);
+}
+
+/* Cart Badge */
+.santuara-header__cart-badge {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold-gradient-primary);
+  color: #080808;
+  font-size: 0.62rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+  line-height: 1;
+}
+
+/* Mobile Hamburger Toggle */
+.santuara-header__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.santuara-header__burger:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.santuara-header__burger-line {
+  width: 20px;
+  height: 1.5px;
+  background-color: #ffffff;
+  border-radius: 1px;
+  transition: transform 0.35s var(--ease-luxury), opacity 0.2s ease, background-color 0.25s ease;
+}
+
+.santuara-header__burger:hover .santuara-header__burger-line {
+  background-color: var(--gold-light);
+}
+
+.santuara-header__burger--active .santuara-header__burger-line:first-child {
+  transform: translateY(3.25px) rotate(45deg);
+  background-color: var(--gold-primary);
+}
+
+.santuara-header__burger--active .santuara-header__burger-line:last-child {
+  transform: translateY(-3.25px) rotate(-45deg);
+  background-color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   MOBILE MENU DRAWER
+   ========================================================================== */
+
+.santuara-mobile-drawer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1100;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0.4s ease;
+}
+
+.santuara-mobile-drawer--open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.santuara-mobile-drawer__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.santuara-mobile-drawer--open .santuara-mobile-drawer__backdrop {
+  opacity: 1;
+}
+
+.santuara-mobile-drawer__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+  background: linear-gradient(180deg, #0e0e12 0%, #060608 100%);
+  border-left: 1px solid rgba(212, 175, 55, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.25rem 2rem;
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.9);
+  overflow-y: auto;
+}
+
+.santuara-mobile-drawer--open .santuara-mobile-drawer__panel {
+  transform: translateX(0);
+}
+
+.santuara-mobile-drawer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.santuara-mobile-drawer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.santuara-mobile-drawer__wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  letter-spacing: 0.22em;
+  background: var(--gold-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.santuara-mobile-drawer__close {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.santuara-mobile-drawer__close:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  transform: rotate(90deg);
+}
+
+.santuara-mobile-drawer__separator {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.3) 0%, transparent 100%);
+  margin: 1.25rem 0;
+}
+
+.santuara-mobile-drawer__nav {
+  margin: 1.5rem 0;
+  flex: 1;
+}
+
+.santuara-mobile-drawer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.santuara-mobile-drawer__item {
+  transform: translateX(20px);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  transition-delay: calc(var(--item-idx) * 0.06s + 0.1s);
+}
+
+.santuara-mobile-drawer--open .santuara-mobile-drawer__item {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.santuara-mobile-drawer__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0.5rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.santuara-mobile-drawer__num {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-muted);
+  margin-right: 1.25rem;
+}
+
+.santuara-mobile-drawer__label {
+  flex: 1;
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 4vw, 1.85rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.santuara-mobile-drawer__arrow {
+  color: var(--text-muted);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.santuara-mobile-drawer__link:hover .santuara-mobile-drawer__label {
+  color: var(--gold-light);
+  transform: translateX(6px);
+}
+
+.santuara-mobile-drawer__link:hover .santuara-mobile-drawer__arrow {
+  color: var(--gold-primary);
+  transform: translateX(4px);
+}
+
+.santuara-mobile-drawer__link--active .santuara-mobile-drawer__label {
+  background: var(--gold-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.santuara-mobile-drawer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 1rem;
+}
+
+.santuara-mobile-drawer__account-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 0.85rem 1.25rem;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.santuara-mobile-drawer__tagline {
+  color: var(--gold-muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   QUICK MODALS (SEARCH, CART, ACCOUNT)
+   ========================================================================== */
+
+.santuara-quick-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.santuara-quick-modal--open {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.santuara-quick-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 6, 8, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.santuara-quick-modal__box {
+  position: relative;
+  width: 90%;
+  max-width: 650px;
+  background: #111115;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 2.25rem;
+  border-radius: 4px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), var(--gold-glow-sm);
+  transform: translateY(-20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.santuara-quick-modal--open .santuara-quick-modal__box {
+  transform: translateY(0);
+}
+
+.santuara-quick-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.santuara-quick-modal__close {
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.santuara-quick-modal__close:hover {
+  color: var(--gold-light);
+}
+
+.santuara-quick-modal__input-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+  padding-bottom: 0.75rem;
+}
+
+.santuara-quick-modal__input {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.santuara-quick-modal__input::placeholder {
+  color: var(--text-muted);
+}
+
+.santuara-quick-modal__tags {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.santuara-quick-modal__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.santuara-quick-modal__tag:hover {
+  border-color: var(--gold-primary);
+  background: rgba(212, 175, 55, 0.1);
+  color: #ffffff;
+}
+
+/* Account specific */
+.santuara-account__title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.santuara-account__sub {
+  color: var(--gold-light);
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.santuara-account__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.santuara-account__submit {
+  background: var(--gold-gradient-primary);
+  color: #080808;
+  padding: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+  border-radius: 2px;
+  border: none;
+  transition: box-shadow 0.25s ease;
+}
+
+.santuara-account__submit:hover {
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Cart Panel */
+.santuara-cart-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0.4s ease;
+}
+
+.santuara-cart-panel--open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.santuara-cart-panel__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.santuara-cart-panel--open .santuara-cart-panel__backdrop {
+  opacity: 1;
+}
+
+.santuara-cart-panel__inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  background: #0d0d10;
+  border-left: 1px solid rgba(212, 175, 55, 0.25);
+  display: flex;
+  flex-direction: column;
+  padding: 2.25rem 2rem;
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -15px 0 50px rgba(0, 0, 0, 0.9);
+}
+
+.santuara-cart-panel--open .santuara-cart-panel__inner {
+  transform: translateX(0);
+}
+
+.santuara-cart-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.santuara-cart-panel__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.santuara-cart-panel__title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+}
+
+.santuara-cart-panel__close {
+  color: var(--text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.santuara-cart-panel__close:hover {
+  color: var(--gold-light);
+}
+
+.santuara-cart-panel__empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.santuara-cart-panel__empty-quote {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.santuara-cart-panel__empty-sub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 260px;
+  line-height: 1.5;
+}
+
+.santuara-cart-panel__explore-btn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--gold-gradient-primary);
+  color: #080808;
+  padding: 0.75rem 1.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   RESPONSIVE (<= 1080px & <= 640px)
+   ========================================================================== */
+
+@media (max-width: 1080px) {
+  .santuara-header__nav {
+    display: none;
+  }
+
+  .santuara-header__burger {
+    display: flex;
+  }
+
+  .santuara-header__action-btn--account {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .santuara-header__inner {
+    padding: 0 1.25rem;
+  }
+
+  .santuara-header__wordmark {
+    font-size: 1.15rem;
+    letter-spacing: 0.2em;
+  }
+
+  .santuara-header__actions {
+    gap: 0.35rem;
+  }
+}
+
+/* Action button active state */
+.santuara-header__action-btn--active {
+  color: var(--gold-primary) !important;
+}
+
+.santuara-header__action-btn--active .santuara-header__action-glow {
+  transform: scale(1.3);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.35) 0%, transparent 70%);
+}
+
+/* Mobile Drawer Actions Section */
+.santuara-mobile-drawer__actions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 0.5rem 0 1rem;
+}
+
+.santuara-mobile-drawer__actions-title {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.santuara-mobile-drawer__actions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+}
+
+.santuara-mobile-drawer__action-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.1rem;
+  background: rgba(20, 20, 26, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 4px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+
+.santuara-mobile-drawer__action-pill:hover,
+.santuara-mobile-drawer__action-pill--active {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  transform: translateX(4px);
+}
+

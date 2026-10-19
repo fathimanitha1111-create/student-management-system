@@ -1,0 +1,1052 @@
+/* ==========================================================================
+   SANTUARA — FEATURED COLLECTION / PERFUMES SHOWCASE
+   Haute Parfumerie Luxury Design
+   ========================================================================== */
+
+.featured-perfumes {
+  position: relative;
+  background-color: #060608;
+  color: #f8f8f8;
+  padding: clamp(5rem, 10vw, 8.5rem) 0 clamp(4rem, 8vw, 7rem);
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Atmospheric Ambient Glows */
+.featured-perfumes__glow {
+  position: absolute;
+  width: min(700px, 85vw);
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  opacity: 0.12;
+  z-index: 1;
+}
+
+.featured-perfumes__glow--left {
+  top: 10%;
+  left: -15%;
+  background: radial-gradient(circle, #D4AF37 0%, transparent 70%);
+}
+
+.featured-perfumes__glow--right {
+  bottom: 10%;
+  right: -15%;
+  background: radial-gradient(circle, #E29D82 0%, #D4AF37 40%, transparent 70%);
+}
+
+.featured-perfumes__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+}
+
+/* ==========================================================================
+   SECTION HEADER
+   ========================================================================== */
+
+.featured-perfumes__header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto clamp(3rem, 6vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featured-perfumes__eyebrow-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.1rem;
+}
+
+.featured-perfumes__bullet {
+  width: 5px;
+  height: 5px;
+  background: var(--gold-primary, #D4AF37);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--gold-primary, #D4AF37);
+}
+
+.featured-perfumes__eyebrow {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-light, #F1DDA8);
+}
+
+.featured-perfumes__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem 0;
+  text-align: center;
+}
+
+.featured-perfumes__title-gold {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 55%, #A6802C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.2));
+}
+
+.featured-perfumes__title-italic {
+  font-family: var(--font-editorial, 'Cormorant Garamond', Georgia, serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  font-weight: 300;
+  color: var(--gold-pale, #F8F3E6);
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+
+.featured-perfumes__subtitle {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: clamp(0.88rem, 1.4vw, 0.98rem);
+  line-height: 1.8;
+  color: rgba(248, 248, 248, 0.65);
+  font-weight: 300;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.featured-perfumes__divider {
+  width: 90px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+  margin: 1.75rem auto 2.25rem;
+}
+
+/* Category Filter Tabs */
+.featured-perfumes__filters {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.4rem;
+  background: rgba(18, 18, 22, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 40px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.featured-perfumes__filter-btn {
+  background: transparent;
+  border: none;
+  color: rgba(248, 248, 248, 0.7);
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.25rem;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featured-perfumes__filter-btn:hover {
+  color: #F1DDA8;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.featured-perfumes__filter-btn--active {
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 100%);
+  color: #080808 !important;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.featured-perfumes__filter-count {
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   PERFUME CARDS GRID
+   ========================================================================== */
+
+.featured-perfumes__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.25rem, 2.2vw, 2rem);
+  width: 100%;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+@media (max-width: 1200px) {
+  .featured-perfumes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .featured-perfumes__grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==========================================================================
+   INDIVIDUAL PRODUCT CARD
+   ========================================================================== */
+
+.featured-card {
+  position: relative;
+  background: rgba(14, 14, 18, 0.65);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 4px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.45s ease,
+              box-shadow 0.45s ease;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+.featured-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-color, #D4AF37), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85),
+              0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.featured-card:hover::before {
+  opacity: 1;
+}
+
+/* Floating Badges */
+.featured-card__badges {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.featured-card__tag {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #080808;
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 100%);
+  padding: 0.3rem 0.65rem;
+  border-radius: 3px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+}
+
+.featured-card__wishlist-btn {
+  background: rgba(14, 14, 18, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: rgba(255, 255, 255, 0.7);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.featured-card__wishlist-btn:hover {
+  border-color: #D4AF37;
+  color: #D4AF37;
+  transform: scale(1.1);
+}
+
+.featured-card__wishlist-btn--active {
+  border-color: #D4AF37;
+  color: #D4AF37;
+  background: rgba(212, 175, 55, 0.15);
+}
+
+/* Card Media Wrap */
+.featured-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #09090c;
+  margin-bottom: 1.25rem;
+}
+
+.featured-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  display: block;
+}
+
+.featured-card:hover .featured-card__image {
+  transform: scale(1.05);
+  filter: brightness(1.03);
+}
+
+.featured-card__media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 8, 10, 0.85) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.featured-card:hover .featured-card__media-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.featured-card__quick-btn {
+  background: rgba(18, 18, 22, 0.88);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #F8F8F8;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.15rem;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  justify-content: center;
+}
+
+.featured-card__quick-btn:hover {
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 100%);
+  color: #080808;
+  border-color: #F1DDA8;
+}
+
+/* Card Body */
+.featured-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.featured-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.featured-card__concentration {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--gold-light, #F1DDA8);
+  text-transform: uppercase;
+}
+
+.featured-card__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  color: #F1DDA8;
+  font-weight: 600;
+}
+
+.featured-card__reviews {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+}
+
+.featured-card__name {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+}
+
+.featured-card__type {
+  font-family: var(--font-editorial, 'Cormorant Garamond', Georgia, serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(212, 175, 55, 0.9);
+  margin-bottom: 0.75rem;
+}
+
+.featured-card__notes-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: rgba(248, 248, 248, 0.6);
+  margin: 0 0 1.1rem 0;
+  min-height: 2.2rem;
+}
+
+.featured-card__notes-icon {
+  color: #D4AF37;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Size Switcher Pills */
+.featured-card__size-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.65rem;
+  background: rgba(10, 10, 12, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+
+.featured-card__size-label {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.featured-card__size-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.featured-card__size-pill {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.featured-card__size-pill:hover {
+  border-color: #D4AF37;
+  color: #F1DDA8;
+}
+
+.featured-card__size-pill--active {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: #D4AF37;
+  color: #F1DDA8;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+/* Card Footer with Price and Reserve Button */
+.featured-card__footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.featured-card__price-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-card__currency {
+  display: none;
+}
+
+.featured-card__amount {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold-light, #F1DDA8);
+  line-height: 1;
+}
+
+.featured-card__amount::before {
+  content: '$';
+  font-size: 0.9em;
+  margin-right: 1px;
+}
+
+.featured-card__tax {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 0.25rem;
+}
+
+.featured-card__bag-btn {
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #ffffff;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.58rem 1.15rem;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featured-card__bag-btn:hover {
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 100%);
+  border-color: #F1DDA8;
+  color: #080808;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   BOTTOM PROMO CARD
+   ========================================================================== */
+
+.featured-perfumes__bottom-cta {
+  width: 100%;
+}
+
+.featured-perfumes__bottom-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(18, 18, 24, 0.75) 0%, rgba(12, 12, 16, 0.85) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 4px;
+  padding: clamp(2rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.featured-perfumes__bottom-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #FBF0D9, #D4AF37, #96742B);
+}
+
+.featured-perfumes__bottom-text {
+  max-width: 680px;
+}
+
+.featured-perfumes__bottom-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: #D4AF37;
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+}
+
+.featured-perfumes__bottom-sparkle {
+  color: #D4AF37;
+}
+
+.featured-perfumes__bottom-title {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+}
+
+.featured-perfumes__bottom-desc {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(248, 248, 248, 0.65);
+  margin: 0;
+}
+
+.featured-perfumes__bottom-btn {
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 100%);
+  color: #080808;
+  border: 1px solid #F1DDA8;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.85rem;
+  border-radius: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+  transition: all 0.35s ease;
+  flex-shrink: 0;
+}
+
+.featured-perfumes__bottom-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
+  background: linear-gradient(135deg, #ffffff 0%, #F1DDA8 100%);
+}
+
+@media (max-width: 860px) {
+  .featured-perfumes__bottom-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .featured-perfumes__bottom-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   MODAL / QUICK VIEW DRAWER
+   ========================================================================== */
+
+.featured-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 4, 6, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  animation: featuredModalFadeIn 0.3s ease forwards;
+}
+
+@keyframes featuredModalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.featured-modal {
+  position: relative;
+  background: #0d0d11;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.2);
+  animation: featuredModalScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes featuredModalScaleUp {
+  from {
+    transform: scale(0.95) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.featured-modal__close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f8f8f8;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.featured-modal__close-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: #D4AF37;
+  color: #D4AF37;
+  transform: rotate(90deg);
+}
+
+.featured-modal__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+@media (max-width: 768px) {
+  .featured-modal__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-modal__media {
+  position: relative;
+  background: #060608;
+  min-height: 380px;
+}
+
+.featured-modal__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.featured-modal__badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  background: rgba(8, 8, 10, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 0.35rem 0.85rem;
+  border-radius: 3px;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  color: #F1DDA8;
+  text-transform: uppercase;
+}
+
+.featured-modal__content {
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-modal__eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.featured-modal__type {
+  font-family: var(--font-editorial, 'Cormorant Garamond', Georgia, serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #D4AF37;
+}
+
+.featured-modal__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: #F1DDA8;
+}
+
+.featured-modal__title {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+}
+
+.featured-modal__story {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(248, 248, 248, 0.7);
+  margin-bottom: 1.75rem;
+}
+
+/* Pyramid Breakdown */
+.featured-modal__pyramid {
+  background: rgba(6, 6, 8, 0.5);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 4px;
+  padding: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.featured-modal__pyramid-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #D4AF37;
+  text-transform: uppercase;
+  margin: 0 0 0.85rem 0;
+}
+
+.featured-modal__pyramid-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.featured-modal__pyramid-level {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.featured-modal__pyramid-level:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.featured-modal__level-name {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #F1DDA8;
+  text-transform: uppercase;
+}
+
+.featured-modal__level-desc {
+  font-family: var(--font-editorial, 'Cormorant Garamond', Georgia, serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(248, 248, 248, 0.85);
+}
+
+/* Modal Footer */
+.featured-modal__footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 1rem;
+}
+
+.featured-modal__price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-modal__price-label {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.featured-modal__price {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: 1.35rem;
+  color: #F1DDA8;
+  font-weight: 600;
+}
+
+.featured-modal__cta-btn {
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 100%);
+  color: #080808;
+  border: 1px solid #F1DDA8;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.45rem;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.featured-modal__cta-btn:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #F1DDA8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+}
+
+/* ==========================================================================
+   TOAST NOTIFICATION
+   ========================================================================== */
+
+.featured-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(14, 14, 18, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 4px;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 2000;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: featuredToastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes featuredToastSlideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.featured-toast__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 100%);
+  color: #080808;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.featured-toast__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-toast__title {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #D4AF37;
+  text-transform: uppercase;
+}
+
+.featured-toast__item {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: 0.85rem;
+  color: #ffffff;
+  margin-top: 0.15rem;
+}
+
+.featured-toast__link {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #F1DDA8;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+.featured-toast__link:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: #D4AF37;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .featured-toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1.25rem;
+  }
+}

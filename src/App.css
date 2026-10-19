@@ -1,0 +1,220 @@
+/* ==========================================================================
+   SENTUARA — APP SHELL & FOUNDATION PREVIEW STYLES
+   ========================================================================== */
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Foundation Preview Section */
+.foundation-preview {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(var(--section-spacing-y) + 2rem);
+  padding-bottom: var(--section-spacing-y);
+  text-align: center;
+}
+
+/* Ambient luxury radial glow */
+.foundation-preview__glow {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.12) 0%,
+    rgba(212, 175, 55, 0.03) 45%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.foundation-preview__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foundation-preview__title {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  letter-spacing: var(--tracking-luxury);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  background: var(--gold-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.foundation-preview__subtitle {
+  color: var(--gold-light);
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  max-width: 680px;
+  margin: 0.5rem auto 1rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* Foundation Status Card */
+.foundation-card {
+  width: 100%;
+  max-width: 720px;
+  margin: 1.5rem auto;
+  text-align: left;
+  border-color: rgba(212, 175, 55, 0.25);
+  background: rgba(14, 14, 18, 0.7);
+}
+
+.foundation-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.foundation-card__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.foundation-card__version {
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.foundation-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  letter-spacing: var(--tracking-wider);
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.foundation-card__desc {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.foundation-card__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Tokens Grid */
+.tokens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 720px;
+  margin-top: 1rem;
+}
+
+.token-item {
+  text-align: left;
+}
+
+.token-item__icon {
+  margin-bottom: 0.75rem;
+}
+
+.token-item__title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.token-item__desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.scroll-test-indicator {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+@media (max-width: 640px) {
+  .foundation-card__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Santuara App Shell & Subtle Page Transition */
+.santuara-app {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.santuara-main {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.santuara-page-wrapper {
+  animation: santuaraRouteFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes santuaraRouteFade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

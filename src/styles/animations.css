@@ -1,0 +1,71 @@
+/* ==========================================================================
+   SENTUARA — LUXURY ANIMATIONS & TRANSITIONS
+   ========================================================================== */
+
+/* Shimmer across gold borders and highlights */
+@keyframes goldShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* Subtle ambient pulse for luxury glow rings */
+@keyframes ambientGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.04);
+  }
+}
+
+/* Gentle floating animation for perfume flacons or luxury badges */
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Subtle gold pulse on interaction */
+@keyframes goldPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+/* Slow rotation for decorative seals or emblems */
+@keyframes slowRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Helper animation utility classes */
+.animate-ambient-glow {
+  animation: ambientGlow 8s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: subtleFloat 6s ease-in-out infinite;
+}
+
+.animate-slow-rotate {
+  animation: slowRotate 40s linear infinite;
+}

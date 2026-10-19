@@ -1,0 +1,279 @@
+/* ==========================================================================
+   SANTUARA — CONTACT CONCIERGE MODAL STYLES
+   ========================================================================== */
+
+.santuara-contact-modal {
+  position: relative;
+  background: #0d0d12;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 35px 85px rgba(0, 0, 0, 0.95), 0 0 50px rgba(212, 175, 55, 0.2);
+  animation: santuaraScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.santuara-contact-modal__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8f8f8;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s ease;
+}
+
+.santuara-contact-modal__close:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: #D4AF37;
+  color: #D4AF37;
+  transform: rotate(90deg);
+}
+
+.santuara-contact-modal__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+}
+
+@media (max-width: 780px) {
+  .santuara-contact-modal__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Info Side */
+.santuara-contact-modal__info-side {
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.santuara-contact-modal__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--gold-light, #F1DDA8);
+  margin-bottom: 0.5rem;
+}
+
+.santuara-contact-modal__title {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin: 0 0 0.85rem 0;
+}
+
+.santuara-contact-modal__desc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(248, 248, 248, 0.7);
+  margin-bottom: 2rem;
+}
+
+.santuara-contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.santuara-contact-channel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.65rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+a.santuara-contact-channel:hover {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateX(4px);
+}
+
+.santuara-contact-channel__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.santuara-contact-channel__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.santuara-contact-channel__label {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  color: var(--gold-light, #F1DDA8);
+}
+
+.santuara-contact-channel__val {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.85rem;
+  color: #ffffff;
+  margin-top: 0.15rem;
+}
+
+/* Form Side */
+.santuara-contact-modal__form-side {
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  background: #09090d;
+}
+
+.santuara-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.santuara-contact-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.santuara-contact-form__label {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.santuara-contact-form__input,
+.santuara-contact-form__select,
+.santuara-contact-form__textarea {
+  background: rgba(6, 6, 8, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.santuara-contact-form__input:focus,
+.santuara-contact-form__select:focus,
+.santuara-contact-form__textarea:focus {
+  border-color: #D4AF37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.santuara-contact-submit-btn {
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 100%);
+  color: #080808;
+  border: 1px solid #F1DDA8;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.95rem 1.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.santuara-contact-submit-btn:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #F1DDA8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+}
+
+/* Confirmed */
+.santuara-contact-confirmed {
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.santuara-contact-confirmed__icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.santuara-contact-confirmed__eyebrow {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--gold-light, #F1DDA8);
+  margin-bottom: 0.5rem;
+}
+
+.santuara-contact-confirmed__title {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+}
+
+.santuara-contact-confirmed__desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.santuara-contact-confirmed__btn {
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 100%);
+  color: #080808;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.santuara-contact-confirmed__btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ffffff 0%, #F1DDA8 100%);
+}

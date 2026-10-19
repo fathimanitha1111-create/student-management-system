@@ -1,0 +1,44 @@
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.gold-divider--compact {
+  margin: 1.5rem 0;
+}
+
+.gold-divider--normal {
+  margin: 3.5rem 0;
+}
+
+.gold-divider--spacious {
+  margin: 6rem 0;
+}
+
+.gold-divider__line {
+  flex: 1;
+  height: 1px;
+}
+
+.gold-divider__line--left {
+  background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.4) 100%);
+}
+
+.gold-divider__line--right {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.4) 0%, transparent 100%);
+}
+
+.gold-divider__emblem {
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.gold-divider__emblem svg {
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5));
+}

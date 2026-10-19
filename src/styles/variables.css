@@ -1,0 +1,89 @@
+/* ==========================================================================
+   SENTUARA — LUXURY DESIGN SYSTEM TOKENS
+   Haute Parfumerie & Artisanal Fragrances
+   ========================================================================== */
+
+:root {
+  /* --- Backgrounds (Deep Velvet Black & Rich Charcoal) --- */
+  --bg-primary: #080808;
+  --bg-secondary: #0e0e10;
+  --bg-tertiary: #141416;
+  --bg-elevated: #1a1a1e;
+  --bg-overlay: rgba(8, 8, 8, 0.85);
+
+  /* --- Champagne Gold Accent Palette --- */
+  --gold-primary: #D4AF37;
+  --gold-light: #F1DDA8;
+  --gold-pale: #F8F3E6;
+  --gold-muted: #9E824C;
+  --gold-deep: #7D6328;
+  --gold-dark: #4A3A16;
+
+  /* Gradient Champagne Gold */
+  --gold-gradient-primary: linear-gradient(135deg, #F5E2B3 0%, #D4AF37 50%, #A8842E 100%);
+  --gold-gradient-subtle: linear-gradient(180deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 100%);
+  --gold-gradient-line: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.6) 50%, transparent 100%);
+  --gold-gradient-shimmer: linear-gradient(90deg, transparent 0%, rgba(245, 226, 179, 0.4) 50%, transparent 100%);
+
+  /* --- Charcoal & Neutral Tones --- */
+  --charcoal-900: #0a0a0c;
+  --charcoal-800: #121215;
+  --charcoal-700: #1c1c22;
+  --charcoal-600: #292932;
+  --charcoal-500: #42424e;
+
+  /* --- Typography Colors --- */
+  --text-primary: #F8F8F8;
+  --text-secondary: #B4B4B8;
+  --text-muted: #727278;
+  --text-gold: #D8B26E;
+  --text-gold-light: #F4E5C4;
+
+  /* --- Luxury Glassmorphism & Borders --- */
+  --glass-bg: rgba(18, 18, 22, 0.65);
+  --glass-bg-hover: rgba(26, 26, 32, 0.85);
+  --glass-blur: blur(16px);
+  --glass-border: 1px solid rgba(212, 175, 55, 0.15);
+  --glass-border-hover: 1px solid rgba(212, 175, 55, 0.35);
+  --glass-border-faint: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* --- Shadows & Atmospheric Glows --- */
+  --gold-glow-sm: 0 0 15px rgba(212, 175, 55, 0.15);
+  --gold-glow-md: 0 0 30px rgba(212, 175, 55, 0.22);
+  --gold-glow-lg: 0 0 60px rgba(212, 175, 55, 0.18);
+  --shadow-dark: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+  /* --- Typography Settings --- */
+  --font-serif: 'Cinzel', 'Times New Roman', serif;
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.18em;
+  --tracking-widest: 0.28em;
+  --tracking-luxury: 0.35em;
+
+  /* --- Transitions & Timing --- */
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 350ms;
+  --duration-slow: 700ms;
+
+  /* --- Layout & Spacing --- */
+  --container-max-width: 1320px;
+  --container-padding: clamp(1.25rem, 5vw, 3rem);
+  --section-spacing-y: clamp(5rem, 12vw, 9.5rem);
+
+  /* --- Z-Indices --- */
+  --z-base: 1;
+  --z-elevated: 10;
+  --z-sticky: 100;
+  --z-drawer: 500;
+  --z-modal: 1000;
+  --z-cursor: 9999;
+}

@@ -1,0 +1,51 @@
+.glass-card {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all var(--duration-normal) var(--ease-luxury);
+  box-shadow: var(--shadow-card);
+}
+
+.glass-card__top-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.45) 50%,
+    transparent 100%
+  );
+  opacity: 0.7;
+  transition: opacity var(--duration-normal) var(--ease-luxury);
+}
+
+.glass-card__content {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.glass-card--interactive {
+  cursor: pointer;
+}
+
+.glass-card--interactive:hover {
+  transform: translateY(-4px);
+  background: var(--glass-bg-hover);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.glass-card--interactive:hover .glass-card__top-highlight {
+  opacity: 1;
+}
+
+.glass-card--glow:hover {
+  box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.8), var(--gold-glow-sm);
+}

@@ -1,0 +1,431 @@
+/* ==========================================================================
+   SANTUARA — ABOUT SECTION STYLES
+   Haute Parfumerie & Artisanal Fragrances
+   ========================================================================== */
+
+.santuara-about {
+  position: relative;
+  width: 100%;
+  background-color: #060608;
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  overflow: hidden;
+  z-index: 6;
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+/* Ambient warm amber lighting and subtle radial glows */
+.santuara-about__ambient-glow {
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.07) 0%, rgba(180, 130, 40, 0.03) 45%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.santuara-about__amber-light {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(160, 100, 25, 0.06) 0%, transparent 65%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Container */
+.santuara-about__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4.5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(3rem, 6vw, 6.5rem);
+}
+
+/* ==========================================================================
+   LEFT COLUMN: CINEMATIC PERFUME IMAGE
+   ========================================================================== */
+
+.santuara-about__image-col {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.santuara-about__image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #0a0a0d;
+  box-shadow: 
+    0 25px 60px -15px rgba(0, 0, 0, 0.9),
+    0 0 35px rgba(212, 175, 55, 0.1);
+  will-change: transform, clip-path, opacity;
+}
+
+/* Gold border outline accent */
+.santuara-about__frame-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 3;
+  transition: border-color 0.4s ease;
+}
+
+.santuara-about__image-frame:hover .santuara-about__frame-border {
+  border-color: rgba(212, 175, 55, 0.55);
+}
+
+.santuara-about__image-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 25%, rgba(245, 226, 179, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.santuara-about__image-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.santuara-about__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+  filter: brightness(0.96) contrast(1.05);
+}
+
+.santuara-about__image-frame:hover .santuara-about__image {
+  transform: scale(1.03);
+  filter: brightness(1.02) contrast(1.08);
+}
+
+/* Subtle corner label */
+.santuara-about__image-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(8, 8, 10, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  color: var(--gold-light);
+  z-index: 4;
+}
+
+.santuara-about__badge-sparkle {
+  color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: EDITORIAL NARRATIVE
+   ========================================================================== */
+
+.santuara-about__content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Gold Eyebrow / Label */
+.santuara-about__eyebrow-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.santuara-about__bullet {
+  width: 5px;
+  height: 5px;
+  background: var(--gold-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--gold-primary);
+}
+
+.santuara-about__label {
+  font-family: var(--font-sans);
+  font-size: clamp(0.7rem, 0.95vw, 0.78rem);
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+
+/* Large Heading */
+.santuara-about__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.santuara-about__heading-primary {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.4vw, 2.85rem);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: #ffffff;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.santuara-about__heading-accent {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--gold-pale);
+  line-height: 1.15;
+  background: var(--gold-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Champagne Gold Decorative Line */
+.santuara-about__divider {
+  width: 100%;
+  max-width: 220px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.75) 0%, rgba(212, 175, 55, 0.2) 80%, transparent 100%);
+  margin-bottom: 2rem;
+}
+
+/* Paragraphs */
+.santuara-about__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+}
+
+.santuara-about__paragraph {
+  font-family: var(--font-sans);
+  font-size: clamp(0.92rem, 1.05vw, 1.02rem);
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.015em;
+}
+
+/* ==========================================================================
+   CTA BUTTON — IDENTICAL TO HERO CTA LANGUAGE
+   ========================================================================== */
+
+.santuara-about__cta-wrap {
+  position: relative;
+}
+
+.santuara-about__cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.05rem 2.5rem;
+  background: rgba(14, 14, 18, 0.45);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.santuara-about__cta-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-gradient-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.santuara-about__cta-text {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color 0.35s ease;
+}
+
+.santuara-about__cta-arrow {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.santuara-about__cta-btn:hover {
+  border-color: var(--gold-light);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25);
+  transform: translateY(-2px);
+}
+
+.santuara-about__cta-btn:hover .santuara-about__cta-fill {
+  transform: scaleX(1);
+}
+
+.santuara-about__cta-btn:hover .santuara-about__cta-text {
+  color: #060608;
+}
+
+.santuara-about__cta-btn:hover .santuara-about__cta-arrow {
+  color: #060608;
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   RESPONSIVE AUDIT & BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .santuara-about {
+    padding: 5rem 0;
+  }
+
+  .santuara-about__container {
+    gap: 3rem;
+  }
+
+  .santuara-about__image-frame {
+    max-width: 100%;
+  }
+
+  .santuara-about__paragraph {
+    font-size: 0.92rem;
+  }
+}
+
+/* Mobile & Small Tablets (768px and below) */
+@media (max-width: 768px) {
+  .santuara-about {
+    padding: 4rem 0;
+  }
+
+  .santuara-about__container {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .santuara-about__image-col {
+    order: 1;
+    width: 100%;
+  }
+
+  .santuara-about__content-col {
+    order: 2;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .santuara-about__image-frame {
+    max-width: 100%;
+    aspect-ratio: 16 / 11;
+  }
+
+  .santuara-about__heading {
+    margin-bottom: 1.25rem;
+  }
+
+  .santuara-about__heading-primary {
+    font-size: 1.6rem;
+  }
+
+  .santuara-about__heading-accent {
+    font-size: 1.85rem;
+  }
+
+  .santuara-about__divider {
+    max-width: 140px;
+    margin-bottom: 1.5rem;
+  }
+
+  .santuara-about__body {
+    margin-bottom: 2rem;
+  }
+
+  .santuara-about__cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.95rem 1.8rem;
+  }
+}
+
+/* Mobile Extra Small (<= 430px, 390px, 375px, 320px) */
+@media (max-width: 430px) {
+  .santuara-about {
+    padding: 3.5rem 0;
+  }
+
+  .santuara-about__image-frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .santuara-about__heading-primary {
+    font-size: 1.35rem;
+    letter-spacing: 0.1em;
+  }
+
+  .santuara-about__heading-accent {
+    font-size: 1.55rem;
+  }
+
+  .santuara-about__paragraph {
+    font-size: 0.86rem;
+    line-height: 1.75;
+  }
+
+  .santuara-about__cta-text {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+  }
+}

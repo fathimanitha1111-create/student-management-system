@@ -1,0 +1,92 @@
+/* ==========================================================================
+   SENTUARA — SECTION HEADING STYLES
+   ========================================================================== */
+
+.section-heading {
+  margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+  position: relative;
+}
+
+.section-heading--center {
+  text-align: center;
+}
+
+.section-heading--left {
+  text-align: left;
+}
+
+.section-heading--right {
+  text-align: right;
+}
+
+/* Overline Badge / Subtitle */
+.section-heading__overline-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.section-heading__bullet {
+  width: 4px;
+  height: 4px;
+  background: var(--gold-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--gold-primary);
+}
+
+.section-heading__overline {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-luxury);
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+/* Main Display Title */
+.section-heading__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.section-heading__highlight {
+  background: var(--gold-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* Editorial Description */
+.section-heading__description {
+  margin-top: 1.25rem;
+  font-family: var(--font-editorial);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+.section-heading--center .section-heading__description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading--right .section-heading__description {
+  margin-left: auto;
+}
+
+.section-heading__description--light {
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+}

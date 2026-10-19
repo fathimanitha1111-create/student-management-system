@@ -1,0 +1,110 @@
+/* ==========================================================================
+   SANTUARA — HERO BACKGROUND STYLES
+   ========================================================================== */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Deep near-black base */
+.hero-background__base {
+  position: absolute;
+  inset: 0;
+  background-color: #060608;
+}
+
+/* Cinematic warm amber spotlight positioned behind the perfume bottle */
+.hero-background__spotlight {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(50px);
+  mix-blend-mode: screen;
+  transition: background 0.15s ease-out;
+  opacity: 0.9;
+}
+
+/* Deep mahogany and warm charcoal shadow gradients */
+.hero-background__deep-shadows {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 85% 65%, rgba(68, 36, 12, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 100%, rgba(20, 12, 8, 0.6) 0%, transparent 70%);
+}
+
+/* Subtle atmospheric smoke / mist overlay */
+.hero-background__smoke {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at 75% 45%,
+    rgba(220, 170, 95, 0.09) 0%,
+    rgba(140, 90, 40, 0.04) 40%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  transition: transform 0.2s ease-out;
+  opacity: 0.85;
+}
+
+/* Dark left vignette ensuring crystal-clear text readability */
+.hero-background__left-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 6, 8, 0.95) 0%,
+    rgba(6, 6, 8, 0.8) 50%,
+    rgba(6, 6, 8, 0) 100%
+  );
+  z-index: 1;
+}
+
+/* Floating golden dust particles canvas */
+.hero-background__particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.75;
+}
+
+/* Fine atmospheric grain */
+.hero-background__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: radial-gradient(#fff 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+@media (max-width: 768px) {
+  .hero-background__left-vignette {
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(6, 6, 8, 0.9) 0%,
+      rgba(6, 6, 8, 0.7) 45%,
+      rgba(6, 6, 8, 0.4) 100%
+    );
+  }
+
+  .hero-background__smoke {
+    width: 100%;
+  }
+}

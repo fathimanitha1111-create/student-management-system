@@ -1,0 +1,117 @@
+/* ==========================================================================
+   SANTUARA — SCROLL INDICATOR STYLES
+   ========================================================================== */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* Minimalist mouse icon */
+.scroll-indicator__mouse {
+  width: 18px;
+  height: 28px;
+  border: 1.2px solid rgba(212, 175, 55, 0.55);
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.scroll-indicator__wheel {
+  width: 2px;
+  height: 5px;
+  background-color: var(--gold-light);
+  border-radius: 1px;
+  animation: scrollWheelPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollWheelPulse {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  60% {
+    opacity: 0.1;
+    transform: translateY(7px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+/* Label */
+.scroll-indicator__label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.scroll-indicator:hover .scroll-indicator__label {
+  color: var(--gold-light);
+}
+
+/* Thin vertical gold line with sliding light */
+.scroll-indicator__line-wrap {
+  width: 1px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-indicator__line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--gold-primary) 50%,
+    transparent 100%
+  );
+  animation: scrollLineDrop 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes scrollLineDrop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 1.25rem;
+    gap: 0.4rem;
+  }
+  .scroll-indicator__line-wrap {
+    height: 24px;
+  }
+}

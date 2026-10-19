@@ -1,0 +1,176 @@
+/* ==========================================================================
+   SANTUARA — LUXURY BOTTLE 3D STAGE STYLES
+   ========================================================================== */
+
+.luxury-bottle-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  width: 100%;
+  max-width: 620px;
+  user-select: none;
+}
+
+/* Ambient warm golden halo behind bottle */
+.luxury-bottle__ambient-glow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(225, 160, 50, 0.28) 0%,
+    rgba(180, 110, 25, 0.16) 35%,
+    rgba(60, 30, 10, 0.08) 60%,
+    transparent 75%
+  );
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 0.25s ease-out;
+}
+
+/* 3D Bottle Wrapper */
+.luxury-bottle__3d-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  z-index: 2;
+}
+
+/* Image Container */
+.luxury-bottle__image-container {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 
+    0 30px 80px -15px rgba(0, 0, 0, 0.95),
+    0 0 50px rgba(212, 175, 55, 0.12);
+  /* Elegant blend into the black background */
+  mask-image: radial-gradient(
+    ellipse 92% 92% at 50% 50%,
+    black 72%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 92% 92% at 50% 50%,
+    black 72%,
+    transparent 100%
+  );
+}
+
+.luxury-bottle__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  filter: contrast(1.04) brightness(0.98);
+  transition: filter 0.5s ease;
+}
+
+/* Dynamic golden light sweep across the bottle */
+.luxury-bottle__light-sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 235, 175, 0.03) 30%,
+    rgba(255, 230, 160, 0.15) 50%,
+    transparent 70%
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transform: skewX(-20deg);
+  transition: transform 0.2s ease-out;
+}
+
+/* Glass specular sheen */
+.luxury-bottle__glass-sheen {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 65% 30%,
+    rgba(255, 240, 200, 0.12) 0%,
+    transparent 45%
+  );
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+/* Fragrance aura mist veil */
+.luxury-bottle__mist-veil {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 70%,
+    rgba(212, 160, 60, 0.08) 0%,
+    transparent 60%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Base Shadow onto Volcanic Slate */
+.luxury-bottle__base-shadow {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  width: 75%;
+  height: 45px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(15, 10, 5, 0.6) 40%,
+    transparent 75%
+  );
+  filter: blur(14px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Responsive Scaling */
+@media (max-width: 1440px) {
+  .luxury-bottle-stage {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .luxury-bottle-stage {
+    max-width: 440px;
+  }
+  .luxury-bottle__ambient-glow {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .luxury-bottle-stage {
+    max-width: 340px;
+    margin: 1.5rem auto 0;
+  }
+  .luxury-bottle__ambient-glow {
+    width: 300px;
+    height: 300px;
+  }
+}

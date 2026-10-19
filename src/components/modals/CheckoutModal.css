@@ -1,0 +1,395 @@
+/* ==========================================================================
+   SANTUARA — CHECKOUT MODAL STYLES
+   ========================================================================== */
+
+.santuara-checkout-modal {
+  position: relative;
+  background: #0d0d12;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 950px;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 35px 85px rgba(0, 0, 0, 0.95), 0 0 50px rgba(212, 175, 55, 0.2);
+  animation: santuaraScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.santuara-checkout-modal__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8f8f8;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s ease;
+}
+
+.santuara-checkout-modal__close:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: #D4AF37;
+  color: #D4AF37;
+  transform: rotate(90deg);
+}
+
+.santuara-checkout-modal__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+}
+
+@media (max-width: 820px) {
+  .santuara-checkout-modal__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form Side */
+.santuara-checkout-modal__form-side {
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.santuara-checkout-modal__header {
+  margin-bottom: 1.5rem;
+}
+
+.santuara-checkout-modal__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--gold-light, #F1DDA8);
+  margin-bottom: 0.5rem;
+}
+
+.santuara-checkout-modal__title {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.santuara-checkout-demo-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--gold-light, #F1DDA8);
+  margin-bottom: 1.75rem;
+}
+
+.santuara-checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.santuara-checkout-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.santuara-checkout-form__label {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.santuara-checkout-form__input {
+  background: rgba(6, 6, 8, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.santuara-checkout-form__input:focus {
+  border-color: #D4AF37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.santuara-checkout-form__row {
+  display: flex;
+  gap: 1rem;
+}
+
+.santuara-checkout-submit-btn {
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 100%);
+  color: #080808;
+  border: 1px solid #F1DDA8;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1rem 1.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.santuara-checkout-submit-btn:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #F1DDA8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+}
+
+/* Summary Side */
+.santuara-checkout-modal__summary-side {
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  background: #09090d;
+  display: flex;
+  flex-direction: column;
+}
+
+.santuara-checkout-summary__title {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.santuara-checkout-summary__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-height: 220px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+}
+
+.santuara-checkout-summary__item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.santuara-checkout-summary__thumb {
+  width: 48px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.santuara-checkout-summary__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.santuara-checkout-summary__name {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.santuara-checkout-summary__meta {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.santuara-checkout-summary__price {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: 0.95rem;
+  color: var(--gold-light, #F1DDA8);
+  font-weight: 600;
+}
+
+.santuara-checkout-totals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.santuara-checkout-totals__row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.santuara-checkout-totals__divider {
+  height: 1px;
+  background: rgba(212, 175, 55, 0.2);
+  margin: 0.5rem 0;
+}
+
+.santuara-checkout-totals__total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.santuara-checkout-totals__total-val {
+  color: var(--gold-light, #F1DDA8);
+  font-size: 1.35rem;
+}
+
+.santuara-checkout-guarantee {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+}
+
+.santuara-checkout-guarantee p {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* Confirmation */
+.santuara-checkout-confirmed {
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.santuara-checkout-confirmed__icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.santuara-checkout-confirmed__eyebrow {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--gold-light, #F1DDA8);
+  margin-bottom: 0.5rem;
+}
+
+.santuara-checkout-confirmed__title {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+}
+
+.santuara-checkout-confirmed__code-box {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.85rem 2rem;
+  background: rgba(6, 6, 8, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.santuara-checkout-confirmed__code-label {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.santuara-checkout-confirmed__code {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #D4AF37;
+  margin-top: 0.2rem;
+}
+
+.santuara-checkout-confirmed__desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 540px;
+  margin-bottom: 1.5rem;
+}
+
+.santuara-checkout-confirmed__details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.75rem;
+  color: var(--gold-light, #F1DDA8);
+  margin-bottom: 2.25rem;
+}
+
+.santuara-checkout-confirmed__btn {
+  background: linear-gradient(135deg, #FBF0D9 0%, #D4AF37 100%);
+  color: #080808;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.95rem 2.25rem;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.santuara-checkout-confirmed__btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ffffff 0%, #F1DDA8 100%);
+}

@@ -1,0 +1,91 @@
+/* ==========================================================================
+   SENTUARA — LUXURY TYPOGRAPHY SYSTEM
+   ========================================================================== */
+
+/* Headings in Cinzel Serif */
+h1, h2, h3, h4, h5, h6,
+.font-display {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+h1, .text-display-1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: var(--tracking-widest);
+}
+
+h2, .text-display-2 {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  letter-spacing: var(--tracking-wider);
+}
+
+h3, .text-display-3 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: var(--tracking-wide);
+}
+
+h4, .text-display-4 {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Editorial Serif for Poetry & Descriptions */
+.font-editorial {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.font-editorial-italic {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+/* Luxury Overline / Tag / Eyebrow */
+.text-overline {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-luxury);
+  color: var(--gold-light);
+  display: inline-block;
+}
+
+/* Gold Text Gradient Accent */
+.text-gold-gradient {
+  background: var(--gold-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Body & Sans Serif */
+body, p, input, button, textarea,
+.font-body {
+  font-family: var(--font-sans);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.text-subtle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.text-gold {
+  color: var(--gold-primary);
+}
+
+.text-gold-light {
+  color: var(--gold-light);
+}
